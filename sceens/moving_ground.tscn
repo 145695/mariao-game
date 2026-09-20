@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://n714xkfe3rlu"]
+
+[ext_resource type="Script" uid="uid://fbiyu25amyrm" path="res://sceens/moving_ground.gd" id="1_lwfu0"]
+[ext_resource type="Texture2D" uid="uid://b5v82n8ff0vjp" path="res://Terrain (16x16).png" id="2_g2lhr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7gt30"]
+atlas = ExtResource("2_g2lhr")
+region = Rect2(192, 0, 48, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mqyys"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7gt30")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4w6fv"]
+size = Vector2(94, 34)
+
+[node name="MovingGround" type="AnimatableBody2D" unique_id=2132121513]
+position = Vector2(503, 542)
+script = ExtResource("1_lwfu0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1046323253]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_mqyys")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=714932149]
+shape = SubResource("RectangleShape2D_4w6fv")
+
+[node name="WallDetector" type="RayCast2D" parent="." unique_id=1921144626]
+target_position = Vector2(60, 50)
+collide_with_areas = true

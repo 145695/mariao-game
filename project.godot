@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="mariao-game"
-run/main_scene="uid://da3lanakh4bkd"
+run/main_scene="uid://ddy4fcdgypbrk"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 
